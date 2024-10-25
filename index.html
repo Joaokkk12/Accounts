@@ -37,8 +37,8 @@
   
     
   
-  <input class="button" type="button" id="create" value="001" onclick="submit()">
-  <input class="button" type="button" id="create" value="002" onclick="c2()">
+  <input id="button" type="button" id="create" value="001" onclick="submit()">
+  <input id="button" type="button" id="create" value="002" onclick="c2()">
 </div>
   </div>
     <div id="codeEntry">
@@ -56,8 +56,8 @@
                 // Oculta a entrada de código e mostra o conteúdo
                 document.getElementById("codeEntry").style.display = "none";
                 document.getElementById("content").style.display = "block";
-              document.getElementById("scripts").style.display = "block";
-              document.getElementById("cabecario").style.display = "none";
+              document.getElementById("scripts").style.display = "none";
+              document.getElementById("cabecario").style.display = "block";
             } else {
                 alert("Código incorreto! Tente novamente.");
             }
@@ -88,7 +88,7 @@
 
 
 
-.scripts .button {
+#scripts #button {
   position:relative;
   top:150px;
   display: inherit;
