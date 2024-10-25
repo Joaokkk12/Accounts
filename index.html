@@ -33,7 +33,7 @@
 <div id="cabecario">
   <h1>sorry bro this project has been closed...</h1>
 </div>
-<div class="scripts">
+<div id="scripts">
   
     
   
@@ -55,8 +55,9 @@
             if (inputCode === correctCode) {
                 // Oculta a entrada de código e mostra o conteúdo
                 document.getElementById("codeEntry").style.display = "none";
-                document.getElementById("content").style.display = "none";
-              document.getElementById("cabecario").style.display = "block";
+                document.getElementById("content").style.display = "block";
+              document.getElementById("scripts").style.display = "block";
+              document.getElementById("cabecario").style.display = "none";
             } else {
                 alert("Código incorreto! Tente novamente.");
             }
