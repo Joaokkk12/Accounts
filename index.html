@@ -8,14 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <link rel="stylesheet" href="variavel.css">
-  <script>
-    function code() {
-      code = admin009
-      print(code)
-      
-    } 
-  </script>
-  <div class="project">
+  <style>
+        #content {
+            display: none; /* Oculta o conteúdo inicialmente */
+        }
+    <style>
+        #cabecario {
+            display: none; /* Oculta o conteúdo inicialmente */
+        }
+    </style>
+  </style>
+  <div class="content">
 </head>
 
   <script>
@@ -34,6 +37,28 @@
   <input class="button" type="button" id="create" value="001" onclick="submit()">
   
 </div>
+  
+    <div id="codeEntry">
+        <label for="codeInput">Insira o código:</label>
+        <input type="password" id="codeInput" placeholder="Digite o código">
+        <button onclick="checkCode()">Enviar</button>
+    </div>
+
+    <script>
+        function checkCode() {
+            const inputCode = document.getElementById("codeInput").value;
+            const correctCode = "12345"; // Defina o código correto aqui
+
+            if (inputCode === correctCode) {
+                // Oculta a entrada de código e mostra o conteúdo
+                document.getElementById("codeEntry").style.display = "none";
+                document.getElementById("content").style.display = "block";
+              document.getElementById("cabecario").style.display = "block";
+            } else {
+                alert("Código incorreto! Tente novamente.");
+            }
+        }
+    </script>
 </body>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap');
