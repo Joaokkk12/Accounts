@@ -31,11 +31,15 @@
     function c3() {
       window.open("hbos001.htnl)
     }
+    function numebrrs() {
+      window.open("AccountId.html")
+    }
   </script>
 <body>
 <div id="cabecario">
   <h1>Accounts</h1>
   <button onclick="c3()">.</button>
+  <button onclick="numebrrs()">accounts disponiveis</button>
 </div>
 <div id="scripts">
   
@@ -43,6 +47,7 @@
   
   <input id="button" type="button" id="create" value="001" onclick="submit()">
   <input id="button" type="button" id="create" value="002" onclick="c2()">
+  
 </div>
   </div>
     <div id="codeEntry">
@@ -131,4 +136,41 @@
   }
 </style>
   </div>
+
+  <!-- Primeira Página -->
+<script type="module">
+  // Importando os módulos do Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+  // Configuração do Firebase (substitua pelos seus dados do Firebase)
+  const firebaseConfig = {
+    apiKey: "AIzaSyCUrA6RDOy27mAeagvRSWoNjYbKkHX15lA",
+    authDomain: "testeccdode.firebaseapp.com",
+    databaseURL: "https://testeccdode-default-rtdb.firebaseio.com",
+    projectId: "testeccdode",
+    storageBucket: "testeccdode.firebasestorage.app",
+    messagingSenderId: "461719826236",
+    appId: "1:461719826236:web:6addc4561470eec8b63839"
+  };
+
+  // Inicializando o Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app); // Obtém a instância do banco de dados
+
+  // Contar os elementos com a classe "divide"
+  const classDivideCount = document.querySelectorAll(".button").length;
+
+  // Referência para o caminho no Firebase
+  const classDivideRef = ref(database, 'contagem/classDivide'); // Caminho no Firebase
+
+  // Enviar a contagem para o Firebase
+  set(classDivideRef, classDivideCount)
+    .then(() => {
+      console.log("Contagem enviada para o Firebase com sucesso.");
+    })
+    .catch((error) => {
+      console.error("Erro ao enviar para o Firebase:", error);
+    });
+</script>
 </html>
